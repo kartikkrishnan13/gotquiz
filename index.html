@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Kalam:700|Laila|Montserrat|Patrick+Hand+SC" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="quesAns.js"></script>
+    <script src="scripts.js"></script>
+    <title>Game of Thrones</title>
+  </head>
+  <body>
+    <div class="container1">
+      <img id="gotlogo" src="GoT.png" alt="Game of Thrones">
+    </div>
+    <div class="container2">
+      <div class="countdown">
+        <div id="days">
+        </div>
+        DAYS
+      </div>
+      <div class="countdown">
+        <div id="hours">
+        </div>
+        HOURS
+      </div>
+      <div class="countdown">
+        <div id="minutes">
+        </div>
+        MINUTES
+      </div>
+      <div class="countdown">
+        <div id="seconds">
+        </div>
+        SECONDS
+      </div>
+    </div>
+    <div ng-app="gotQuizApp" ng-controller="gotQuizCtrl" class="divApp">
+			<div ng-show="showQuiz">
+				<form ng-submit="submitQuiz()" onkeypress="return event.keyCode != 13;">
+					<div class="questionNumber">
+						<h2>Question {{pos+1}} of {{totalQuestions}}</h2>
+					</div>
+					<div class="displayQuestion">
+						<p>{{questions[order[pos]].question}}</p>
+					</div>
+					<div class="divInputChoices">
+						<input type="radio" id="choice1" class="inputChoices" ng-model="selected[order[pos]]" ng-value="questions[order[pos]].choices[0]">
+						<label for="choice1" class="inputChoices">{{questions[order[pos]].choices[0]}}</label>
+						<br>
+						<input type="radio" id="choice2" class="inputChoices" ng-model="selected[order[pos]]" ng-value="questions[order[pos]].choices[1]">
+						<label for="choice2" class="inputChoices">{{questions[order[pos]].choices[1]}}</label>
+						<br>
+						<input type="radio" id="choice3" class="inputChoices" ng-model="selected[order[pos]]" ng-value="questions[order[pos]].choices[2]">
+						<label for="choice3" class="inputChoices">{{questions[order[pos]].choices[2]}}</label>
+						<br>
+						<input type="radio" id="choice4" class="inputChoices" ng-model="selected[order[pos]]" ng-value="questions[order[pos]].choices[3]">
+						<label for="choice4" class="inputChoices">{{questions[order[pos]].choices[3]}}</label>
+						<br>
+					</div>
+					<div class="divPreviousNext">
+						<button type="button" id="previous" class="button1" ng-click="pos=pos-1">PREVIOUS</button>
+						<button type="button" id="next" class="button1" ng-click="pos=pos+1">NEXT</button>
+					</div>
+					<div class="divSubmitQuiz">
+						<button type="submit" id="submit-quiz" class="button1">SUBMIT</button>
+					</div>
+				</form>
+			</div>
+			<div ng-show="showQuizResult">
+        <div class="gotResult">
+          <p>YOUR SCORE => {{quizResult}}</p>
+        </div>
+        <hr>
+        <br>
+        <div class="displaySolution">{{solution}}</div>
+			</div>
+    </div>
+		<div class="credits">
+			-K@rt!k
+		</div>
+  </body>
+</html>

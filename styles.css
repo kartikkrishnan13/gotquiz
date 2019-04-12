@@ -1,0 +1,127 @@
+.container1 {
+  margin: 20px auto;
+}
+
+#gotlogo {
+  width: 100%;
+}
+
+.container2 {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.countdown {
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 20px;
+  color: crimson;
+}
+
+#days, #hours, #minutes, #seconds {
+  font-family: 'Kalam', cursive;
+  font-size: 25px;
+  background-color: crimson;
+  color: white;
+}
+
+.divApp {
+	text-align: center;
+	width: 60%;
+	margin: 50px auto;
+  background-color: brown;
+  color: white;
+	border: 2px solid fuchsia;
+	padding: 20px 40px;
+}
+
+.questionNumber {
+	margin: 40px auto;
+  font-family: 'Kalam', cursive;
+	font-size: 30px;
+}
+
+.displayQuestion {
+  margin: 40px auto;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 25px;
+}
+
+.divInputChoices {
+	margin: 40px auto;
+}
+
+.inputChoices {
+  font-family: 'Laila', serif;
+	font-size: 20px;
+	padding: 5px;
+	margin: 15px auto;
+	cursor: pointer;
+}
+
+input[type="radio"]:checked + .inputChoices {
+  animation: checkit 1s both;
+}
+
+@keyframes checkit {
+  0% {
+  }
+  100% {
+    color: gold;
+    background-color: dodgerblue;
+    font-weight: bold;
+  }
+}
+
+.divPreviousNext {
+	display: flex;
+	justify-content: space-between;
+	margin: 40px auto;
+}
+
+.button1 {
+  font-family: 'Patrick Hand SC', cursive;
+  font-weight: bold;
+  font-size: 20px;
+  color: black;
+  background-color: aqua;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10%;
+  cursor: pointer;
+}
+
+.divSubmitQuiz {
+	margin: 20px auto;
+}
+
+.gotResult {
+	font-family: 'Laila', serif;
+	font-size: 50px;
+  margin: 40px auto;
+}
+
+.displaySolution {
+  font-family: 'Montserrat', sans-serif;
+  white-space: pre-wrap;
+  font-size: 25px;
+}
+
+.credits {
+	position: fixed;
+	font-family: 'Kalam', cursive;
+	color: chocolate;
+	font-weight: bold;
+	bottom: 0;
+	right: 0;
+}
+
+hr {
+  border: 2px groove yellow;
+}
+
+font-family: 'Kalam', cursive;
+font-family: 'Laila', serif;
+font-family: 'Montserrat', sans-serif;
+font-family: 'Patrick Hand SC', cursive;
